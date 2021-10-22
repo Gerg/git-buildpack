@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo "Cloning $GIT_SHA from $GIT_REPO..."
+
+build_path=$1
+
+pushd $build_path || exit
+    rm -rf *
+    git clone $GIT_REPO .
+    git reset --hard $GIT_SHA
+popd || exit

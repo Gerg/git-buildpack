@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+echo 'Checking for $GIT_REPO and $GIT_SHA environment variables...'
+
+if [ -z $GIT_REPO ] || [ -z $GIT_SHA ]; then
+  echo "Git buildpack environment variables not detected."
+  exit 1
+else
+  echo "Detected git environment variables."
+  exit 0
+fi
